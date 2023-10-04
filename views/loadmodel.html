@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models - Load 3D</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="../src/libs/three.js-master/build/three.min.js"></script>
+    <script src="../src/libs/controls/OrbitControls.js"></script>
+
+    <!-- OBJ Y MTL -->
+    <script src="../src/libs/load/OBJLoader.js"></script>
+    <script src="../src/libs/load/MTLLoader.js"></script>
+
+    <!-- GLTF LOADER -->
+    <script src="../src/libs/load/DRACOLoader.js"></script>
+    <script src="../src/libs/load/GLTFLoader.js"></script>
+
+    <script src="../src/js/mainObjects.js"></script>
+</head>
+<body onload="startScene()">
+    <nav class="navbar navbar-expand-lg" style="background-color: #8543ED;"> 
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/src/images/3d_9417456.png" alt="Bootstrap" width="10%"> <!--Logo en la barra de navegación-->
+            </a>
+            <div id="countdown" style="color: white; font-size: 24px;">Tiempo: 60</div>
+        </div>
+    </nav>
+
+    <!-- Agrega una imagen oculta que se mostrará cuando el contador llegue a 0 -->
+    <div id="winPage" style="display: none">
+        <img src="../src/images/lose.png" style="width: 100%; height: 100vh;">
+    </div>
+    <div id="losePage" style="display: none"></div>
+
+    <audio autoplay loop>
+        <source src="../src/sounds/Ambiente en bosque (Efecto de Sonido) Forest ambience Sound Effect.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+    <canvas style="position: fixed;" id="modelsLoad"></canvas>
+    <div class="container">
+        <footer class="navbar fixed-bottom mt-auto bg-light text-center text-lg-start">
+            <p class="text-center text-muted">© 2023 - Santiago Chagüendo Mendoza</p>
+        </footer>
+    </div>
+</body>
+</html>
